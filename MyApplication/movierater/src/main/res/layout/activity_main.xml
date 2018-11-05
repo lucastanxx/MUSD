@@ -39,9 +39,11 @@
         android:layout_height="wrap_content"
         android:text="Language" />
 
-    <LinearLayout
+    <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:checkedButton="@+id/radioButton1"
+        android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/radioButton1"
@@ -67,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tamil" />
-    </LinearLayout>
+    </RadioGroup>
 
     <TextView
         android:id="@+id/textView"
@@ -101,15 +103,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="Violence" />
+            android:text="Violence"
+            android:visibility="gone" />
 
         <CheckBox
             android:id="@+id/checkBox4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="Langauge used" />
+            android:text="Langauge used"
+            android:visibility="gone" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/button"

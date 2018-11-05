@@ -1,1 +1,1 @@
-include ':app', ':movierater'
+include ':app', ':movierater', ':test'
