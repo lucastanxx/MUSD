@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Main2Activity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Title:" />
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Venom"
+        android:textSize="75px" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Overview:" />
+
+    <TextView
+        android:id="@+id/overViewText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="When Eddie Brock acquires the powers of a symbiote, he will have to release his alter-ego Venom to save his life"
+        android:textSize="75px" />
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Language:" />
+
+    <TextView
+        android:id="@+id/languageText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="English"
+        android:textSize="75px" />
+
+    <TextView
+        android:id="@+id/ReleaseDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Release Date:" />
+
+    <TextView
+        android:id="@+id/releaseText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="03-10-2018"
+        android:textSize="75px" />
+
+    <TextView
+        android:id="@+id/suitable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Suitable for children below 13:" />
+
+    <TextView
+        android:id="@+id/suitableText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Yes"
+        android:textSize="75px" />
+
+</LinearLayout>
