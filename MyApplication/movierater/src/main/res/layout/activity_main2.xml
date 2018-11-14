@@ -24,7 +24,6 @@
         android:id="@+id/titleText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Venom"
         android:textSize="75px" />
 
     <TextView
@@ -36,7 +35,6 @@
         android:id="@+id/overViewText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="When Eddie Brock acquires the powers of a symbiote, he will have to release his alter-ego Venom to save his life"
         android:textSize="75px" />
 
 
@@ -50,7 +48,6 @@
         android:id="@+id/languageText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="English"
         android:textSize="75px" />
 
     <TextView
@@ -63,7 +60,6 @@
         android:id="@+id/releaseText1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="03-10-2018"
         android:textSize="75px" />
 
     <TextView
@@ -76,7 +72,6 @@
         android:id="@+id/suitableText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Yes"
         android:textSize="75px" />
 
 </LinearLayout>
