@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
                 //do nothing
             }
             return super.onOptionsItemSelected(item)
-        } else if (item?.itemId == R.id.miAdd){
+        } else if (item?.itemId == R.id.miClear){
             nameText.text.clear()
             descriptionText.text.clear()
             radioButton1.isChecked = true

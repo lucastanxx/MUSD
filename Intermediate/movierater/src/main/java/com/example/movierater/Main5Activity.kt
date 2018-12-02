@@ -20,6 +20,7 @@ class Main5Activity : AppCompatActivity() {
         actionbar.setDisplayHomeAsUpEnabled(true)
         registerForContextMenu(reviewText)
         var movieObject = intent.getStringArrayExtra("THISISAMOVIENAME")
+        movieObject.movieName
         Toast.makeText(this,"hello",Toast.LENGTH_LONG).show()
     }
     override fun onSupportNavigateUp(): Boolean {
