@@ -1,5 +1,6 @@
 package com.example.movierater
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -11,7 +12,8 @@ class Main3Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
-        var movieName = "Venom"
+        val test = applicationContext as MovieDetails
+        var movieName = test.getMovieName1()
         textView8.text = "Enter your review for the movie: "+movieName
         val actionbar = supportActionBar
         actionbar!!.title = "MovieRater"
@@ -24,6 +26,15 @@ class Main3Activity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if(item?.itemId == R.id.miSubmit){
+            val test = applicationContext as MovieDetails
+            test.setStarss(ratingBar.rating)
+            test.setReviews1(editText.text.toString())
+            val i = Intent(this@Main3Activity, Main5Activity::class.java)
+            startActivity(i)
+        }else{
+            finish()
+        }
         return super.onOptionsItemSelected(item)
     }
     override fun onSupportNavigateUp(): Boolean {

@@ -44,11 +44,17 @@
         android:layout_height="wrap_content"
         android:text="Reviews:" />
 
+    <RatingBar
+        android:id="@+id/ratingBar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:numStars="5"/>
+
     <TextView
         android:id="@+id/reviewText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="No reviews yet.\nLong press here to add your review"
         android:textSize="75px" />
 
     <TextView
@@ -76,7 +82,7 @@
         android:textSize="75px" />
 
     <TextView
-        android:id="@+id/suitable"
+        android:id="@+id/suitableTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Suitable for children below 13:" />
@@ -86,5 +92,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="75px" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 
 </LinearLayout>

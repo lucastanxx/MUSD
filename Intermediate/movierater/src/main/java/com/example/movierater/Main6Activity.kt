@@ -6,14 +6,13 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main6.*
 
-
-class MainActivity : AppCompatActivity() {
+class Main6Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main6)
         checkBox3.setOnCheckedChangeListener { _, _ ->
             if (checkBox3.isChecked) {
                 checkBox2.visibility = View.VISIBLE
@@ -26,31 +25,39 @@ class MainActivity : AppCompatActivity() {
             }
         }
         val actionbar = supportActionBar
-        actionbar!!.title = "MovieRater"
-        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar?.setDisplayHomeAsUpEnabled(true)
+        val test = applicationContext as MovieDetails
+        nameText.setText(test.getMovieName1())
+        descriptionText.setText(test.getDescriptions1())
+        releaseText.setText(test.getDate1())
+        var language = test.getLanguage1()
+        if (language == "English") {
+            radioButton1.isChecked = true
+        } else if (language == "Chinese") {
+            radioButton2.isChecked = true
+        } else if (language == "Malay") {
+            radioButton3.isChecked = true
+        } else {
+            radioButton4.isChecked = true
+        }
+        if (test.getReason11()) {
+            checkBox3.isChecked = true
+            checkBox2.isChecked = true
+        }
+        if (test.getReason22()) {
+            checkBox4.isChecked = true
+            checkBox3.isChecked = true
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.addmovie, menu)
+        menuInflater.inflate(R.menu.editmovie, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        if (item?.itemId == R.id.miAdd) {
+        if (item?.itemId == R.id.miSave) {
             var isValid = true
-            if (nameText.text.isNullOrEmpty()) {
-                nameText.setError("Field Empty")
-                isValid = false
-            }
-            if (descriptionText.text.isNullOrEmpty()) {
-                descriptionText.setError("Field Empty")
-                isValid = false
-            }
-            if (releaseText.text.isNullOrEmpty()) {
-                releaseText.setError("Field Empty")
-                isValid = false
-            }
-
             var language = "English"
             var suitable123 = true
             if (isValid) {
@@ -76,33 +83,14 @@ class MainActivity : AppCompatActivity() {
                 test.setSuitable(suitable123)
                 test.setReason11(checkBox2.isChecked)
                 test.setReason22(checkBox4.isChecked)
-                val i = Intent(this@MainActivity, Main5Activity::class.java)
+                val i = Intent(this@Main6Activity, Main5Activity::class.java)
                 startActivity(i)
-            } else {
-                //do nothing
             }
-            return super.onOptionsItemSelected(item)
-        } else if (item?.itemId == R.id.miClear){
-            nameText.text.clear()
-            descriptionText.text.clear()
-            radioButton1.isChecked = true
-            radioButton2.isChecked = false
-            radioButton3.isChecked = false
-            radioButton4.isChecked = false
-            releaseText.text.clear()
-            checkBox3.isChecked = false
-            checkBox2.visibility = View.GONE
-            checkBox4.visibility = View.GONE
-            checkBox2.isChecked = false
-            checkBox4.isChecked = false
-            return super.onOptionsItemSelected(item)
+        } else {
+            val i = Intent(this@Main6Activity, Main4Activity::class.java)
+            startActivity(i)
+
         }
-        else{
-            finish()
-            return super.onOptionsItemSelected(item)
-        }
+        return super.onOptionsItemSelected(item)
     }
 }
-
-
-
