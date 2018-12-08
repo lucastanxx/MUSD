@@ -44,10 +44,10 @@ class Main5Activity : AppCompatActivity() {
         } else {
             suitableText.text = "No(" + reasons + ")"
         }
-        button2.setOnClickListener({
-            var i = Intent(this, Main6Activity::class.java)
-            startActivity(i)
-        })
+//        button2.setOnClickListener({
+//            var i = Intent(this, Main6Activity::class.java)
+//            startActivity(i)
+//        })
     }
 
     override fun onSupportNavigateUp(): Boolean {
