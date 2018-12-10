@@ -13,33 +13,31 @@ class Main5Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main5)
-        val actionbar = supportActionBar
-        actionbar!!.title = "MovieRater"
-        actionbar.setDisplayHomeAsUpEnabled(true)
         registerForContextMenu(reviewText)
-        val test = applicationContext as MovieDetails
-        titleText.text = test.getMovieName1()
-        overViewText.text = test.getDescriptions1()
-        var gotReview = test.getReviews1()
+        val test = applicationContext as MovieList
+        val hi = test.getMovie().last()
+        titleText.text = hi.getMovieName1()
+        overViewText.text = hi.getDescriptions1()
+        var gotReview = hi.getReviews1()
         if(gotReview != ""){
-            ratingBar2.rating = test.getStarss()
-            reviewText.text = test.getReviews1()
+            ratingBar2.rating = hi.getStarss()
+            reviewText.text = hi.getReviews1()
             ratingBar2.visibility = View.VISIBLE
         }
         else{
             reviewText.text = "No reviews yet.\nLong press here to add your review"
         }
-        languageText.text = test.getLanguage1()
-        releaseText1.text = test.getDate1()
+        languageText.text = hi.getLanguage1()
+        releaseText1.text = hi.getDate1()
         var reasons = ""
-        if (test.getReason11() == true) {
+        if (hi.getReason11() == true) {
             reasons += "Violence"
         }
-        if (test.getReason22() == true) {
+        if (hi.getReason22() == true) {
             reasons += " Language used"
         }
 
-        if (test.getSuitable1() == false) {
+        if (hi.getSuitable1() == false) {
             suitableText.text = "Yes"
         } else {
             suitableText.text = "No(" + reasons + ")"

@@ -25,9 +25,6 @@ class MainActivity : AppCompatActivity() {
                 checkBox4.isChecked = false
             }
         }
-        val actionbar = supportActionBar
-        actionbar!!.title = "MovieRater"
-        actionbar.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -68,14 +65,16 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     suitable123 = false
                 }
-                val test = applicationContext as MovieDetails
-                test.setMovieName1(nameText.text.toString())
-                test.setDescriptions1(descriptionText.text.toString())
-                test.setDate1(releaseText.text.toString())
-                test.setLanguage1(language)
-                test.setSuitable(suitable123)
-                test.setReason11(checkBox2.isChecked)
-                test.setReason22(checkBox4.isChecked)
+                val test = applicationContext as MovieList
+                val hi = MovieDetails()
+                hi.setMovieName1(nameText.text.toString())
+                hi.setDescriptions1(descriptionText.text.toString())
+                hi.setDate1(releaseText.text.toString())
+                hi.setLanguage1(language)
+                hi.setSuitable(suitable123)
+                hi.setReason11(checkBox2.isChecked)
+                hi.setReason22(checkBox4.isChecked)
+                test.addMovie(hi)
                 val i = Intent(this@MainActivity, Main5Activity::class.java)
                 startActivity(i)
             } else {
@@ -98,7 +97,7 @@ class MainActivity : AppCompatActivity() {
             return super.onOptionsItemSelected(item)
         }
         else{
-            finish()
+            //do nothing
             return super.onOptionsItemSelected(item)
         }
     }

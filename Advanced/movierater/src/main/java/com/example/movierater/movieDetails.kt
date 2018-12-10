@@ -2,7 +2,7 @@ package com.example.movierater
 
 import android.app.Application
 
-class MovieDetails : Application(){
+class MovieDetails{
     var movieName: String =""
     var descriptions: String=""
     var dates: String=""
@@ -66,5 +66,18 @@ class MovieDetails : Application(){
     }
     fun setStarss(test:Float){
         this.stars = test
+    }
+}
+
+class MovieList : Application(){
+    var movieArrayList : ArrayList<MovieDetails>
+    init {
+        this.movieArrayList = arrayListOf()
+    }
+    fun addMovie(newMovie:MovieDetails){
+        this.movieArrayList.add(newMovie)
+    }
+    fun getMovie():ArrayList<MovieDetails> {
+        return this.movieArrayList
     }
 }

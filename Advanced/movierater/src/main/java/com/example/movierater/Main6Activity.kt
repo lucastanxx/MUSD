@@ -24,13 +24,14 @@ class Main6Activity : AppCompatActivity() {
                 checkBox4.isChecked = false
             }
         }
-        val actionbar = supportActionBar
-        actionbar?.setDisplayHomeAsUpEnabled(true)
-        val test = applicationContext as MovieDetails
-        nameText.setText(test.getMovieName1())
-        descriptionText.setText(test.getDescriptions1())
-        releaseText.setText(test.getDate1())
-        var language = test.getLanguage1()
+        val test = applicationContext as MovieList
+        val position = intent.getIntExtra("position",0)
+        var hi = test.getMovie().elementAt(position.toInt())
+
+        nameText.setText(hi.getMovieName1())
+        descriptionText.setText(hi.getDescriptions1())
+        releaseText.setText(hi.getDate1())
+        var language = hi.getLanguage1()
         if (language == "English") {
             radioButton1.isChecked = true
         } else if (language == "Chinese") {
@@ -40,11 +41,11 @@ class Main6Activity : AppCompatActivity() {
         } else {
             radioButton4.isChecked = true
         }
-        if (test.getReason11()) {
+        if (hi.getReason11()) {
             checkBox3.isChecked = true
             checkBox2.isChecked = true
         }
-        if (test.getReason22()) {
+        if (hi.getReason22()) {
             checkBox4.isChecked = true
             checkBox3.isChecked = true
         }
@@ -75,19 +76,21 @@ class Main6Activity : AppCompatActivity() {
                 } else {
                     suitable123 = false
                 }
-                val test = applicationContext as MovieDetails
-                test.setMovieName1(nameText.text.toString())
-                test.setDescriptions1(descriptionText.text.toString())
-                test.setDate1(releaseText.text.toString())
-                test.setLanguage1(language)
-                test.setSuitable(suitable123)
-                test.setReason11(checkBox2.isChecked)
-                test.setReason22(checkBox4.isChecked)
-                val i = Intent(this@Main6Activity, Main5Activity::class.java)
+                val test = applicationContext as MovieList
+                val position = intent.getIntExtra("position",0)
+                var hi = test.getMovie().elementAt(position.toInt())
+                hi.setMovieName1(nameText.text.toString())
+                hi.setDescriptions1(descriptionText.text.toString())
+                hi.setDate1(releaseText.text.toString())
+                hi.setLanguage1(language)
+                hi.setSuitable(suitable123)
+                hi.setReason11(checkBox2.isChecked)
+                hi.setReason22(checkBox4.isChecked)
+                val i = Intent(this, Main4Activity::class.java)
                 startActivity(i)
             }
         } else {
-            val i = Intent(this@Main6Activity, Main4Activity::class.java)
+            val i = Intent(applicationContext, Main4Activity::class.java)
             startActivity(i)
 
         }
