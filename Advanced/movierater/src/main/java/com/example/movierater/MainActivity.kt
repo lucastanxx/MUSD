@@ -75,7 +75,8 @@ class MainActivity : AppCompatActivity() {
                 hi.setReason11(checkBox2.isChecked)
                 hi.setReason22(checkBox4.isChecked)
                 test.addMovie(hi)
-                val i = Intent(this@MainActivity, Main5Activity::class.java)
+                val i = Intent(this, Main5Activity::class.java)
+                i.putExtra("position",test.getMovie().lastIndex)
                 startActivity(i)
             } else {
                 //do nothing

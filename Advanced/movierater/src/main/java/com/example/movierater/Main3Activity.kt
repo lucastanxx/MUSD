@@ -13,7 +13,8 @@ class Main3Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
         val test = applicationContext as MovieList
-        val hi = test.getMovie().last()
+        val position = intent.getIntExtra("position",0)
+        var hi = test.getMovie().elementAt(position.toInt())
         var movieName = hi.getMovieName1()
         textView8.text = "Enter your review for the movie: "+movieName
     }
@@ -26,15 +27,18 @@ class Main3Activity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if(item?.itemId == R.id.miSubmit){
             val test = applicationContext as MovieList
-            val hi = test.getMovie().last()
+            val position = intent.getIntExtra("position",0)
+            var hi = test.getMovie().elementAt(position.toInt())
             hi.setStarss(ratingBar.rating)
             hi.setReviews1(editText.text.toString())
-            val i = Intent(this@Main3Activity, Main5Activity::class.java)
+            val i = Intent(this, Main5Activity::class.java)
+            i.putExtra("position",position)
             startActivity(i)
         }else{
             //do nothing
         }
         return super.onOptionsItemSelected(item)
+
     }
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()

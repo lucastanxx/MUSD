@@ -57,14 +57,19 @@ class Main5Activity : AppCompatActivity() {
     override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
         super.onCreateContextMenu(menu, v, menuInfo)
         if (v?.id == R.id.reviewText) {
+
             menu?.add(1, 1001, 1, "Add Review")
         }
     }
 
     override fun onContextItemSelected(item: MenuItem?): Boolean {
-        val navigate = Intent(this, Main3Activity::class.java)
         if (item?.itemId == 1001) {
-            startActivity(navigate)
+            val test = applicationContext as MovieList
+            val position = intent.getIntExtra("position",0)
+            var hi = test.getMovie().elementAt(position.toInt())
+            val hello = Intent(this, Main3Activity::class.java)
+            hello.putExtra("position",position)
+            startActivity(hello)
         }
         return super.onContextItemSelected(item)
     }
