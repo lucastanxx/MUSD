@@ -15,7 +15,8 @@ class Main5Activity : AppCompatActivity() {
         setContentView(R.layout.activity_main5)
         registerForContextMenu(reviewText)
         val test = applicationContext as MovieList
-        val hi = test.getMovie().last()
+        val position = intent.getIntExtra("position",0)
+        var hi = test.getMovie().elementAt(position.toInt())
         titleText.text = hi.getMovieName1()
         overViewText.text = hi.getDescriptions1()
         var gotReview = hi.getReviews1()

@@ -86,7 +86,8 @@ class Main6Activity : AppCompatActivity() {
                 hi.setSuitable(suitable123)
                 hi.setReason11(checkBox2.isChecked)
                 hi.setReason22(checkBox4.isChecked)
-                val i = Intent(this, Main4Activity::class.java)
+                val i = Intent(this, Main5Activity::class.java)
+                i.putExtra("position",position)
                 startActivity(i)
             }
         } else {
